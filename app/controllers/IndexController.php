@@ -8,4 +8,10 @@ class IndexController extends Controller
     {
         return '<h1>Hello!</h1>';
     }
+
+    public function sayHalloAction()
+    {
+        echo 'Anda masuk ke sayHallo action';
+        return '<h1>Haloooooo!!!<h1>';
+    }
 }

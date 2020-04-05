@@ -15,6 +15,7 @@ $loader = new Loader();
 
 $loader->registerDirs(
     [
+        APP_PATH . '/config/',
         APP_PATH . '/controllers/',
         APP_PATH . '/models/',
     ]
@@ -39,6 +40,15 @@ $container->set(
         $url = new Url();
         $url->setBaseUri('/');
         return $url;
+    }
+);
+
+$container->set(
+    'router',
+    function () {
+        require APP_PATH . '/config/routing.php';
+
+        return $router;
     }
 );
 
